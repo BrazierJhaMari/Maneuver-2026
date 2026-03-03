@@ -394,17 +394,17 @@ export const calculateTeamStats = (teamMatches: ScoutingEntry[]): Omit<TeamStats
         endgamePoints: round(totalEndgamePoints / matchCount),
 
         // Top-level convenience fields (for match-strategy-config.ts compatibility)
-        avgTotalPoints: round(totalPoints / matchCount),
-        avgAutoPoints: round(totalAutoPoints / matchCount),
-        avgTeleopPoints: round(totalTeleopPoints / matchCount),
-        avgEndgamePoints: round(totalEndgamePoints / matchCount),
-        avgAutoFuel: round(autoFuelTotal / matchCount),
-        avgTeleopFuel: round(teleopFuelTotal / matchCount),
-        avgAutoFuelPassed: round(autoFuelPassedTotal / matchCount),
-        avgTeleopFuelPassed: round(teleopFuelPassedTotal / matchCount),
-        avgFuelPassed: round(totalFuelPassed / matchCount),
-        avgTotalFuel: round(totalFuelScored / matchCount),
-        avgScaledAutoFuel: round(
+        avgTotalPoints: Math.round(totalPoints / matchCount),
+        avgAutoPoints: Math.round(totalAutoPoints / matchCount),
+        avgTeleopPoints: Math.round(totalTeleopPoints / matchCount),
+        avgEndgamePoints: Math.round(totalEndgamePoints / matchCount),
+        avgAutoFuel: Math.round(autoFuelTotal / matchCount),
+        avgTeleopFuel: Math.round(teleopFuelTotal / matchCount),
+        avgAutoFuelPassed: Math.round(autoFuelPassedTotal / matchCount),
+        avgTeleopFuelPassed: Math.round(teleopFuelPassedTotal / matchCount),
+        avgFuelPassed: Math.round(totalFuelPassed / matchCount),
+        avgTotalFuel: Math.round(totalFuelScored / matchCount),
+        avgScaledAutoFuel: Math.round(
             sum(teamMatches, m => {
                 const scaledMetrics = m.gameData?.scaledMetrics as { scaledAutoFuel?: number } | undefined;
                 return typeof scaledMetrics?.scaledAutoFuel === 'number'
