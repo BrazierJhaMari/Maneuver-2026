@@ -103,7 +103,7 @@ Use a custom script if you need special filtering or formatting:
 ```javascript
 // Example fetch script
 const YEAR = 2027;
-const TBA_KEY = 'your_tba_api_key';
+const TBA_KEY = '03C7MTlKGlnEJ0r0fPPAkRXCTtL0GD68XkcUdPv9HlrWGrZ9kt7kiC4dGPV2Quif';
 
 fetch(`https://www.thebluealliance.com/api/v3/events/${YEAR}`, {
   headers: { 'X-TBA-Auth-Key': TBA_KEY }
